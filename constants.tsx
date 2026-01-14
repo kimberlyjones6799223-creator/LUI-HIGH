@@ -77,7 +77,7 @@ export const TRIALS: TrialTask[] = [
       { id: 'g7', name: 'Sony A7R5', price: 23500, rating: 4.9, imageUrl: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400', summary: '6100万像素，AI对焦系统', attributes: [{ label: '画幅', value: '半画幅' },{ label: '评分', value: '4.8分' }] },
       { id: 'g10', name: 'Canon R5', price: 21800, rating: 4.7, imageUrl: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400', summary: '8K视频录制，机身防抖', attributes: [{ label: '画幅', value: '中画幅' },{ label: '评分', value: '4.9分' }] },
       { id: 'g12', name: 'Nikon Z8', price: 26500, rating: 4.9, imageUrl: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400', summary: '全能机型，顶级连拍', attributes: [{ label: '画幅', value: '全画幅' },{ label: '评分', value: '4.9分' }] },
-      { id: 'g9', name: 'Fujifilm GFX', price: 28000, rating: 4.9, imageUrl: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400', summary: '中画幅画质，极致细节', attributes: [{ label: '画幅', value: '全画幅' }{ label: '评分', value: '4.6分' }] }
+      { id: 'g9', name: 'Fujifilm GFX', price: 28000, rating: 4.9, imageUrl: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400', summary: '中画幅画质，极致细节', attributes: [{ label: '画幅', value: '全画幅' },{ label: '评分', value: '4.6分' }] }
     ]
   },
   {
