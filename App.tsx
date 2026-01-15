@@ -76,12 +76,21 @@ const App: React.FC = () => {
   };
 
   const exportResults = (finalResults: TrialResult[]) => {
+    // 查找商品名称的辅助函数
+    const getProductName = (trialId: number, productId: string) => {
+      const trial = TRIALS.find(t => t.id === trialId);
+      const product = trial?.products.find(p => p.id === productId);
+      return product ? product.name : productId;
+    };
+
     // 定义 CSV 表头
+    // 1. 将“所选商品名称”放在“用时(秒)”之前
+    // 2. 将“问卷-日常花费时间”放在最后
     const headers = [
       '被试ID', 'Run次数', '性别', '年龄', 
       '试次顺序', '原始任务ID', '商品数量(N)', '属性维度(D)', 
-      '用时(秒)', '交互次数', '所选商品ID',
-      '问卷-重要性', '问卷-日常花费时间', '问卷-满意度', '问卷-高效性', '问卷-可信赖度', '问卷-擅长程度'
+      '所选商品名称', '用时(秒)', '交互次数',
+      '问卷-重要性', '问卷-满意度', '问卷-高效性', '问卷-可信赖度', '问卷-擅长程度', '问卷-日常花费时间'
     ];
 
     // 将数据打平为行
@@ -94,15 +103,15 @@ const App: React.FC = () => {
       res.trialId,
       res.conditionN,
       res.conditionD,
-      res.durationSeconds.toFixed(2),
+      getProductName(res.trialId, res.selectedProductId), // 所选商品名称
+      res.durationSeconds.toFixed(2), // 用时(秒)
       res.interactionCount,
-      res.selectedProductId,
       res.survey.importance,
-      res.survey.usualTime,
       res.survey.satisfaction,
       res.survey.efficiency,
       res.survey.trust,
-      res.survey.ability
+      res.survey.ability,
+      res.survey.usualTime // 放在最后
     ]);
 
     // 构建 CSV 内容
