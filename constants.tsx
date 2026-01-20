@@ -4,8 +4,8 @@ import { TrialTask } from './types';
 export const TRIALS: TrialTask[] = [
  {
   id: 1,type: 'GIFT',objectCount: 2,dimensionCount: 5,
-  instruction: '马上快要过年了，你想给自己的老师买一个新年礼物，你的老师非常喜欢喝咖啡。请选择价格在300-600元、深度烘培、销量最高的咖啡豆。',
-  reminder: '300-600元，深烘，高销量。',
+  instruction: '马上快要过年了，你想给自己的老师买一个新年礼物，你的老师非常喜欢喝咖啡。请选择价格在300-600元、深度烘培、销量最高、产地巴西，保质期大于9个月的咖啡豆。',
+  reminder: '300-600元，深烘，高销量，产地巴西，保质期大于9个月。',
   products: [
     {
       id: 'd1_0',name: '皮爷 Peets',price: 458,rating: 4.9,
@@ -35,8 +35,8 @@ export const TRIALS: TrialTask[] = [
 },
 {
   id: 2,type: 'GADGET',objectCount: 2,dimensionCount: 5,
-  instruction: '你要选一家全自动意式咖啡机。请选择压力稳定在15bar以上、必须是不锈钢双锅炉、价格在8000-10000元的咖啡机。',
-  reminder: '压力15bar+，双锅炉，价格8k-10k。',
+  instruction: '你要选一家全自动意式咖啡机。请选择压力稳定在15bar以上、必须是不锈钢双锅炉、温控精度为±1℃，萃取方式为预浸泡且可变压力，价格在8000-10000元的咖啡机。',
+  reminder: '压力15bar+，双锅炉，材质为不锈钢，萃取方式为预浸泡+可变压力，价格8k-10k。',
   products: [
     {
       id: 'd2_0',name: '德龙 EC9155',price: 6999,rating: 4.8,
@@ -189,7 +189,7 @@ export const TRIALS: TrialTask[] = [
     { id: "d7_0", name: "新华 颐养金生", price: 100000, rating: 4.6, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "养老年金与健康保障结合", attributes: [{ label: "年化", value: "3.0%" }, { label: "起领", value: "60岁" }, { label: "身故金", value: "不含" }] },
     { id: "d7_1", name: "泰康 幸福年", price: 100000, rating: 4.7, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "养老社区权益，稳健收益", attributes: [{ label: "年化", value: "3.5%" }, { label: "起领", value: "60岁" }, { label: "身故金", value: "不含" }] },
     { id: "d7_2", name: "太平 乐享人生", price: 100000, rating: 4.5, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "国企背景，稳健增长", attributes: [{ label: "年化", value: "2.8%" }, { label: "起领", value: "65岁" }, { label: "身故金", value: "含" }] },
-    { id: "d7_3", name: "友邦 充裕", price: 100000, rating: 4.8, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "全球配置，美元收益", attributes: [{ label: "年化", value: "4.2%" }, { label: "起领", value: "65岁" }, { label: "身故金", value: "含" }] },
+    { id: "d7_3", name: "友邦 充裕", price: 100000, rating: 4.8, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "全球配置，美元收益", attributes: [{ label: "年化", value: "4.2%" }, { label: "起领", value: "55岁" }, { label: "身故金", value: "含" }] },
     { id: "d7_4", name: "平安 尊享", price: 100000, rating: 4.6, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "国民大品牌，理赔有保障", attributes: [{ label: "年化", value: "3.0%" }, { label: "起领", value: "60岁" }, { label: "身故金", value: "含" }] },
     { id: "d7_5", name: "光大 永明", price: 100000, rating: 4.4, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "银行系保险，灵活可选", attributes: [{ label: "年化", value: "3.2%" }, { label: "起领", value: "55岁" }, { label: "身故金", value: "含" }] },
     { id: "d7_6", name: "中宏 乐享", price: 100000, rating: 4.4, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "灵活支取，高流动性", attributes: [{ label: "年化", value: "3.1%" }, { label: "起领", value: "55岁" }, { label: "身故金", value: "不含" }] },
@@ -197,21 +197,21 @@ export const TRIALS: TrialTask[] = [
   ]
 },
 {
-  id: 8,
-  type: "FINANCE",
-  objectCount: 8,
-  dimensionCount: 3,
-  instruction: "你现在想要定投实物黄金作为避险资产。请选择纯度为99.99%、价格在550/g以内。",
-  reminder: "99.99%纯度，＜550/g。",
-  products: [
-    { id: "d8_0", name: "建设银行 龙鼎金", price: 545, rating: 4.9, imageUrl: "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", summary: "银行托管，纯度极高", attributes: [{ label: "纯度", value: "99.99%" }, { label: "价格", value: "615元/g" }, { label: "重量", value: "10g" }] },
-    { id: "d8_1", name: "中国黄金 投资条", price: 550, rating: 4.9, imageUrl: "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", summary: "官定投资条，权威背书", attributes: [{ label: "纯度", value: "99.99%" }, { label: "价格", value: "510元/g" }, { label: "重量", value: "50g" }] },
-    { id: "d8_2", name: "周大福 饰品金", price: 635, rating: 4.8, imageUrl: "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", summary: "精美设计，品牌价值高", attributes: [{ label: "纯度", value: "99.9%" }, { label: "价格", value: "530元/g" }, { label: "重量", value: "5g" }] },
-    { id: "d8_3", name: "金雅福 压制金", price: 538, rating: 4.2, imageUrl: "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", summary: "低门槛，适合初学者", attributes: [{ label: "纯度", value: "99.9%" }, { label: "价格", value: "500元/g" }, { label: "重量", value: "1g" }] },
-    { id: "d8_4", name: "老凤祥 金砖", price: 565, rating: 4.7, imageUrl: "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", summary: "传统名店，保值力强", attributes: [{ label: "纯度", value: "99.99%" }, { label: "价格", value: "680元/g" }, { label: "重量", value: "100g" }] },
-    { id: "d8_5", name: "工商银行 如意金", price: 540, rating: 4.8, imageUrl: "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", summary: "国有大行，安全可靠", attributes: [{ label: "纯度", value: "99.99%" }, { label: "价格", value: "580元/g" }, { label: "重量", value: "20g" }] },
-    { id: "d8_6", name: "深圳珠宝 标准金", price: 530, rating: 4.5, imageUrl: "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", summary: "深圳水贝市场，价格透明", attributes: [{ label: "纯度", value: "99.95%" }, { label: "价格", value: "520元/g" }, { label: "重量", value: "500g" }] },
-    { id: "d8_7", name: "招商银行 一卡通金", price: 555, rating: 4.7, imageUrl: "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", summary: "银行品牌，回购便利", attributes: [{ label: "纯度", value: "99.99%" }, { label: "价格", value: "545元/g" }, { label: "重量", value: "30g" }] }
+  "id": 8,
+  "type": "FINANCE",
+  "objectCount": 8,
+  "dimensionCount": 3,
+  "instruction": "你现在想要定投实物黄金作为避险资产。请选择纯度为99.99%、价格在550/g以内、重量在10g-50g之间的产品。",
+  "reminder": "99.99%纯度，价格＜550/g，重量10g-50g。",
+  "products": [
+    { "id": "d8_0", "name": "建设银行 龙鼎金", "price": 545, "rating": 4.9, "imageUrl": "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", "summary": "银行托管，纯度极高", "attributes": [{ "label": "纯度", "value": "95.99%" }, { "label": "价格", "value": "545元/g" }, { "label": "重量", "value": "10g" }] },
+    { "id": "d8_1", "name": "中国黄金 投资条", "price": 550, "rating": 4.9, "imageUrl": "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", "summary": "官定投资条，权威背书", "attributes": [{ "label": "纯度", "value": "99.99%" }, { "label": "价格", "value": "550元/g" }, { "label": "重量", "value": "50g" }] },
+    { "id": "d8_2", "name": "周大福 饰品金", "price": 635, "rating": 4.8, "imageUrl": "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", "summary": "精美设计，品牌价值高", "attributes": [{ "label": "纯度", "value": "99.9%" }, { "label": "价格", "value": "635元/g" }, { "label": "重量", "value": "5g" }] },
+    { "id": "d8_3", "name": "金雅福 压制金", "price": 538, "rating": 4.2, "imageUrl": "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", "summary": "低门槛，适合初学者", "attributes": [{ "label": "纯度", "value": "99.9%" }, { "label": "价格", "value": "538元/g" }, { "label": "重量", "value": "1g" }] },
+    { "id": "d8_4", "name": "老凤祥 金砖", "price": 565, "rating": 4.7, "imageUrl": "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", "summary": "传统名店，保值力强", "attributes": [{ "label": "纯度", "value": "99.99%" }, { "label": "价格", "value": "565元/g" }, { "label": "重量", "value": "100g" }] },
+    { "id": "d8_5", "name": "工商银行 如意金", "price": 540, "rating": 4.8, "imageUrl": "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", "summary": "国有大行，安全可靠", "attributes": [{ "label": "纯度", "value": "99.99%" }, { "label": "价格", "value": "540元/g" }, { "label": "重量", "value": "20g" }] },
+    { "id": "d8_6", "name": "深圳珠宝 标准金", "price": 530, "rating": 4.5, "imageUrl": "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", "summary": "深圳水贝市场，价格透明", "attributes": [{ "label": "纯度", "value": "99.95%" }, { "label": "价格", "value": "530元/g" }, { "label": "重量", "value": "500g" }] },
+    { "id": "d8_7", "name": "招商银行 一卡通金", "price": 555, "rating": 4.7, "imageUrl": "https://images.unsplash.com/photo-1610375461246-83df859d849d?w=400", "summary": "银行品牌，回购便利", "attributes": [{ "label": "纯度", "value": "99.99%" }, { "label": "价格", "value": "555元/g" }, { "label": "重量", "value": "30g" }] }
   ]
 },
 
@@ -235,12 +235,12 @@ export const TRIALS: TrialTask[] = [
     objectCount: 4,
     dimensionCount: 5,
     instruction: "你现在在准备一个求职面试，需要购置合适的服装。请选择价格区间在2000-3000以内，面料为羊毛，款式为修身，颜色为暗灰，3日内可到货的西装。",
-    reminder: "面试西装，2000-3000元，暗灰色，羊毛面料，修身版型，3日内可到货。",
+    reminder: "2000-3000元，暗灰色，羊毛面料，修身版型，3日内可到货。",
     products: [
-      { id: 'd10_0', name: 'G2000 商务款', price: 2199, rating: 4.5, imageUrl: 'https://images.unsplash.com/photo-1593032465175-481ac7f401a0?w=400', summary: '抗皱面料，职场新人首选', attributes: [{ label: '面料', value: '聚酯纤维混纺' }, { label: '剪裁', value: '修身' }, { label: '发货', value: '次日达' }, { label: '颜色', value: '暗灰色' }, { label: '厚度', value: '中等' }] },
-      { id: 'd10_1', name: '报喜鸟 尊享款', price: 2899, rating: 4.8, imageUrl: 'https://images.unsplash.com/photo-1593032465175-481ac7f401a0?w=400', summary: '精纺羊毛，透气舒爽', attributes: [{ label: '面料', value: '100%羊毛' }, { label: '剪裁', value: '修身' }, { label: '发货', value: '48h发货' }, { label: '颜色', value: '暗灰色' }, { label: '厚度', value: '轻薄' }] },
-      { id: 'd10_2', name: '威可多 VICUTU', price: 2550, rating: 4.9, imageUrl: 'https://images.unsplash.com/photo-1593032465175-481ac7f401a0?w=400', summary: '意式风格，高级垂感', attributes: [{ label: '面料', value: '80%羊毛' }, { label: '剪裁', value: '直筒' }, { label: '发货', value: '3-5天发货' }, { label: '颜色', value: '深灰色' }, { label: '厚度', value: '加厚' }] },
-      { id: 'd10_3', name: '优衣库 基础款', price: 1299, rating: 4.2, imageUrl: 'https://images.unsplash.com/photo-1593032465175-481ac7f401a0?w=400', summary: '可机洗，快时尚', attributes: [{ label: '面料', value: '仿毛化纤' }, { label: '剪裁', value: '宽松' }, { label: '发货', value: '次日达' }, { label: '颜色', value: '浅灰色' }, { label: '厚度', value: '轻薄' }] }
+      { id: 'd10_0', name: 'G2000 商务款', price: 2199, rating: 4.5, imageUrl: 'https://images.unsplash.com/photo-1593032465175-481ac7f401a0?w=400', summary: '抗皱面料，职场新人首选', attributes: [{ label: '面料', value: '聚酯纤维混纺' }, { label: '剪裁', value: '修身' }, { label: '发货', value: '次日达' }, { label: '颜色', value: '暗灰色' }] },
+      { id: 'd10_1', name: '报喜鸟 尊享款', price: 2899, rating: 4.8, imageUrl: 'https://images.unsplash.com/photo-1593032465175-481ac7f401a0?w=400', summary: '精纺羊毛，透气舒爽', attributes: [{ label: '面料', value: '100%羊毛' }, { label: '剪裁', value: '修身' }, { label: '发货', value: '48h发货' }, { label: '颜色', value: '暗灰色' }] },
+      { id: 'd10_2', name: '威可多 VICUTU', price: 2550, rating: 4.9, imageUrl: 'https://images.unsplash.com/photo-1593032465175-481ac7f401a0?w=400', summary: '意式风格，高级垂感', attributes: [{ label: '面料', value: '80%羊毛' }, { label: '剪裁', value: '直筒' }, { label: '发货', value: '3-5天发货' }, { label: '颜色', value: '深灰色' }] },
+      { id: 'd10_3', name: '优衣库 基础款', price: 1299, rating: 4.2, imageUrl: 'https://images.unsplash.com/photo-1593032465175-481ac7f401a0?w=400', summary: '可机洗，快时尚', attributes: [{ label: '面料', value: '仿毛化纤' }, { label: '剪裁', value: '宽松' }, { label: '发货', value: '次日达' }, { label: '颜色', value: '浅灰色' }] }
     ]
   },
 
@@ -305,17 +305,21 @@ export const TRIALS: TrialTask[] = [
   ]
 },
 {
-    id: 15,
-    type: 'GIFT',
-    objectCount: 2,
-    dimensionCount: 3,
-    instruction: "你需要买一瓶顶级红酒送给你的重要合作伙伴。请选择评分95分以上、价格超过3000元、并且年份在2015年之后（含2015年）的红酒。",
-    reminder: "评分95分+，价格3k+，年份2015+。",
-    products: [
-      { id: 'd15_0', name: '拉菲古堡 2018', price: 8800, rating: 5.0, imageUrl: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400', summary: '名庄之首，极具收藏价值', attributes: [{ label: '专家分', value: '94' }, { label: '年份', value: '2018' }] },
-      { id: 'd15_1', name: '作品一号 Opus', price: 3850, rating: 4.9, imageUrl: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400', summary: '纳帕谷顶尖跨界佳作', attributes: [{ label: '专家分', value: '97' }, { label: '年份', value: '2014' }] }
-    ]
-  },
+  "id": 15,
+  "type": "GIFT",
+  "objectCount": 6,
+  "dimensionCount": 3,
+  "instruction": "你需要买一瓶顶级红酒送给你的重要合作伙伴。请选择评分95分以上、价格超过3000元、并且年份在2015年之后（含2015年）的红酒。",
+  "reminder": "专家评分95分+，价格3k+，年份2015年以后。",
+  "products": [
+    { "id": "d15_0", "name": "拉菲古堡 2018", "price": 8800, "rating": 5.0, "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400", "summary": "名庄之首，极具收藏价值", "attributes": [{ "label": "专家分", "value": "92" }, { "label": "年份", "value": "2018" }] },
+    { "id": "d15_1", "name": "作品一号 Opus", "price": 3850, "rating": 4.9, "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400", "summary": "纳帕谷顶尖跨界佳作", "attributes": [{ "label": "专家分", "value": "97" }, { "label": "年份", "value": "2014" }] },
+    { "id": "d15_2", "name": "木桐酒庄 2016", "price": 5200, "rating": 4.9, "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400", "summary": "艺术酒标，顶级波尔多", "attributes": [{ "label": "专家分", "value": "96" }, { "label": "年份", "value": "2016" }] },
+    { "id": "d15_3", "name": "西施佳雅 2013", "price": 3200, "rating": 4.8, "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400", "summary": "意大利四雅之首，优雅细腻", "attributes": [{ "label": "专家分", "value": "96" }, { "label": "年份", "value": "2013" }] },
+    { "id": "d15_4", "name": "唐培里侬 2012", "price": 2800, "rating": 4.8, "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400", "summary": "顶级香槟，庆典之选", "attributes": [{ "label": "专家分", "value": "96" }, { "label": "年份", "value": "2012" }] },
+    { "id": "d15_5", "name": "啸鹰酒庄 2017", "price": 12500, "rating": 5.0, "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400", "summary": "膜拜酒王，产量稀少", "attributes": [{ "label": "专家分", "value": "94" }, { "label": "年份", "value": "2017" }] }
+  ]
+},
 {
   id: 16,
   type: "EDUCATION",
