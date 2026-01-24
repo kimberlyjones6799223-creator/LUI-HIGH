@@ -113,7 +113,7 @@ export const TRIALS: TrialTask[] = [
   reminder: '1.5万左右，4080显卡，屏幕刷新率240Hz+。',
   products: [
     {
-      id: 'd4_0',name: 'ROG 枪神7 P',price: 15999,rating: 4.9,
+      id: 'd4_0',name: 'ROG 枪神7 P',price: 15999,rating: 4.6,
       imageUrl: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400',
       summary: '败家之眼，光效拉满',
       attributes: [
@@ -131,7 +131,7 @@ export const TRIALS: TrialTask[] = [
       ]
     },
     {
-      id: 'd4_2',name: '外星人 m18',price: 23999,rating: 5.0,
+      id: 'd4_2',name: '外星人 m18',price: 15999,rating: 5.0,
       imageUrl: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400',
       summary: '极致信仰，堆料机皇',
       attributes: [
@@ -190,7 +190,7 @@ export const TRIALS: TrialTask[] = [
     { id: "d7_1", name: "泰康 幸福年", price: 100000, rating: 4.7, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "养老社区权益，稳健收益", attributes: [{ label: "年化", value: "3.5%" }, { label: "起领", value: "60岁" }, { label: "身故金", value: "不含" }] },
     { id: "d7_2", name: "太平 乐享人生", price: 100000, rating: 4.5, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "国企背景，稳健增长", attributes: [{ label: "年化", value: "2.8%" }, { label: "起领", value: "65岁" }, { label: "身故金", value: "含" }] },
     { id: "d7_3", name: "友邦 充裕", price: 100000, rating: 4.8, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "全球配置，美元收益", attributes: [{ label: "年化", value: "4.2%" }, { label: "起领", value: "55岁" }, { label: "身故金", value: "含" }] },
-    { id: "d7_4", name: "平安 尊享", price: 100000, rating: 4.6, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "国民大品牌，理赔有保障", attributes: [{ label: "年化", value: "3.0%" }, { label: "起领", value: "60岁" }, { label: "身故金", value: "含" }] },
+    { id: "d7_4", name: "平安 尊享", price: 100000, rating: 4.6, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "国民大品牌，理赔有保障", attributes: [{ label: "年化", value: "3.5%" }, { label: "起领", value: "60岁" }, { label: "身故金", value: "含" }] },
     { id: "d7_5", name: "光大 永明", price: 100000, rating: 4.4, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "银行系保险，灵活可选", attributes: [{ label: "年化", value: "3.2%" }, { label: "起领", value: "55岁" }, { label: "身故金", value: "含" }] },
     { id: "d7_6", name: "中宏 乐享", price: 100000, rating: 4.4, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "灵活支取，高流动性", attributes: [{ label: "年化", value: "3.1%" }, { label: "起领", value: "55岁" }, { label: "身故金", value: "不含" }] },
     { id: "d7_7", name: "人寿 鑫裕", price: 100000, rating: 4.5, imageUrl: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400", summary: "国资背景，安全第一", attributes: [{ label: "年化", value: "2.5%" }, { label: "起领", value: "55岁" }, { label: "身故金", value: "含" }] }
@@ -276,14 +276,14 @@ export const TRIALS: TrialTask[] = [
   instruction: "现在母亲节还有7天就要到了，你想给母亲购置一条项链。请选择价格在10000-20000之间，材质为黄金，包含免费清洗的售后服务，店铺为官方旗舰店，在5日内可送达的项链。",
   reminder: "1-2万，黄金，免费清洗，旗舰店，5日达。",
   products: [
-    { id: "d13_0", name: "Tiffany & Co.", price: 12500, rating: 4.8, imageUrl: "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=400", summary: "时尚前卫，国际大牌", attributes: [{ label: "材质", value: "18K黄金" }, { label: "售后", value: "有偿清洗" }, { label: "店铺", value: "品牌旗舰店" }, { label: "物流", value: "7-10天" }, { label: "品牌", value: "国际一线" }] },
-    { id: "d13_1", name: "周大福 传承", price: 13800, rating: 4.5, imageUrl: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=400", summary: "古法工艺，厚重典雅", attributes: [{ label: "材质", value: "合金镀金" }, { label: "售后", value: "终身免洗" }, { label: "店铺", value: "品牌旗舰店" }, { label: "物流", value: "3天" }, { label: "品牌", value: "香港品牌" }] },
-    { id: "d13_2", name: "Cartier Love", price: 22000, rating: 4.7, imageUrl: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=400", summary: "经典螺丝设计，极具辨识度", attributes: [{ label: "材质", value: "合金镀金" }, { label: "售后", value: "无偿保养" }, { label: "店铺", value: "品牌旗舰店" }, { label: "物流", value: "2天" }, { label: "品牌", value: "法国奢华" }] },
-    { id: "d13_3", name: "六福珠宝 龙凤呈祥", price: 15800, rating: 4.6, imageUrl: "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=400", summary: "传统设计，寓意美好", attributes: [{ label: "材质", value: "24K足金" }, { label: "售后", value: "终身免费清洗" }, { label: "店铺", value: "授权经销商" }, { label: "物流", value: "3天" }, { label: "品牌", value: "港资珠宝" }] },
-    { id: "d13_4", name: "VCA 梵克雅宝", price: 19800, rating: 4.9, imageUrl: "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=400", summary: "四叶草经典，名媛首选", attributes: [{ label: "材质", value: "18K黄金" }, { label: "售后", value: "品牌免费养护" }, { label: "店铺", value: "品牌旗舰店" }, { label: "物流", value: "5天" }, { label: "品牌", value: "法国高级" }] },
-    { id: "d13_5", name: "老凤祥 福禄寿", price: 8800, rating: 4.4, imageUrl: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=400", summary: "中华老字号，工艺精湛", attributes: [{ label: "材质", value: "千足金" }, { label: "售后", value: "免费清洗" }, { label: "店铺", value: "官方旗舰店" }, { label: "物流", value: "4天" }, { label: "品牌", value: "百年老店" }] },
-    { id: "d13_6", name: "施华洛世奇", price: 2800, rating: 4.2, imageUrl: "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=400", summary: "亮眼仿水晶，多变造型", attributes: [{ label: "材质", value: "合金镀金" }, { label: "售后", value: "无清洗服务" }, { label: "店铺", value: "官方自营" }, { label: "物流", value: "次日达" }, { label: "品牌", value: "奥地利水晶" }] },
-    { id: "d13_7", name: "宝格丽 Serpenti", price: 21500, rating: 4.8, imageUrl: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=400", summary: "灵蛇设计，大胆前卫", attributes: [{ label: "材质", value: "18K黄金" }, { label: "售后", value: "专属保养" }, { label: "店铺", value: "品牌旗舰店" }, { label: "物流", value: "10-15天" }, { label: "品牌", value: "意大利奢侈" }] }
+    { id: "d13_0", name: "Tiffany & Co.", price: 12500, rating: 4.8, imageUrl: "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=400", summary: "时尚前卫，国际大牌", attributes: [{ label: "材质", value: "18K黄金" }, { label: "售后", value: "有偿清洗" }, { label: "店铺", value: "品牌旗舰店" }, { label: "物流", value: "7-10天" }] },
+    { id: "d13_1", name: "周大福 传承", price: 13800, rating: 4.5, imageUrl: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=400", summary: "古法工艺，厚重典雅", attributes: [{ label: "材质", value: "合金镀金" }, { label: "售后", value: "终身免洗" }, { label: "店铺", value: "品牌旗舰店" }, { label: "物流", value: "3天" }] },
+    { id: "d13_2", name: "Cartier Love", price: 22000, rating: 4.7, imageUrl: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=400", summary: "经典螺丝设计，极具辨识度", attributes: [{ label: "材质", value: "合金镀金" }, { label: "售后", value: "无偿保养" }, { label: "店铺", value: "品牌旗舰店" }, { label: "物流", value: "2天" }] },
+    { id: "d13_3", name: "六福珠宝 龙凤呈祥", price: 15800, rating: 4.6, imageUrl: "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=400", summary: "传统设计，寓意美好", attributes: [{ label: "材质", value: "24K足金" }, { label: "售后", value: "终身免费清洗" }, { label: "店铺", value: "授权经销商" }, { label: "物流", value: "3天" }] },
+    { id: "d13_4", name: "老凤祥 福禄寿", price: 19800, rating: 4.9, imageUrl: "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=400", summary: "四叶草经典，名媛首选", attributes: [{ label: "材质", value: "18K黄金" }, { label: "售后", value: "品牌免费养护" }, { label: "店铺", value: "品牌旗舰店" }, { label: "物流", value: "5天" }] },
+    { id: "d13_5", name: "VCA 梵克雅宝", price: 8800, rating: 4.4, imageUrl: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=400", summary: "中华老字号，工艺精湛", attributes: [{ label: "材质", value: "合金镀金" }, { label: "售后", value: "免费清洗" }, { label: "店铺", value: "官方旗舰店" }, { label: "物流", value: "4天" }] },
+    { id: "d13_6", name: "施华洛世奇", price: 2800, rating: 4.2, imageUrl: "https://images.unsplash.com/photo-1589128777073-263566ae5e4d?w=400", summary: "亮眼仿水晶，多变造型", attributes: [{ label: "材质", value: "合金镀金" }, { label: "售后", value: "无清洗服务" }, { label: "店铺", value: "官方自营" }, { label: "物流", value: "次日达" }] },
+    { id: "d13_7", name: "宝格丽 Serpenti", price: 21500, rating: 4.8, imageUrl: "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?w=400", summary: "灵蛇设计，大胆前卫", attributes: [{ label: "材质", value: "白银" }, { label: "售后", value: "专属保养" }, { label: "店铺", value: "品牌旗舰店" }, { label: "物流", value: "10-15天" }] }
   ]
 },
 {
@@ -312,7 +312,7 @@ export const TRIALS: TrialTask[] = [
   "instruction": "你需要买一瓶顶级红酒送给你的重要合作伙伴。请选择评分95分以上、价格超过3000元、并且年份在2015年之后（含2015年）的红酒。",
   "reminder": "专家评分95分+，价格3k+，年份2015年以后。",
   "products": [
-    { "id": "d15_0", "name": "拉菲古堡 2018", "price": 8800, "rating": 5.0, "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400", "summary": "名庄之首，极具收藏价值", "attributes": [{ "label": "专家分", "value": "92" }, { "label": "年份", "value": "2018" }] },
+    { "id": "d15_0", "name": "拉菲古堡 2018", "price": 8800, "rating": 4.2, "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400", "summary": "名庄之首，极具收藏价值", "attributes": [{ "label": "专家分", "value": "92" }, { "label": "年份", "value": "2018" }] },
     { "id": "d15_1", "name": "作品一号 Opus", "price": 3850, "rating": 4.9, "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400", "summary": "纳帕谷顶尖跨界佳作", "attributes": [{ "label": "专家分", "value": "97" }, { "label": "年份", "value": "2014" }] },
     { "id": "d15_2", "name": "木桐酒庄 2016", "price": 5200, "rating": 4.9, "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400", "summary": "艺术酒标，顶级波尔多", "attributes": [{ "label": "专家分", "value": "96" }, { "label": "年份", "value": "2016" }] },
     { "id": "d15_3", "name": "西施佳雅 2013", "price": 3200, "rating": 4.8, "imageUrl": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400", "summary": "意大利四雅之首，优雅细腻", "attributes": [{ "label": "专家分", "value": "96" }, { "label": "年份", "value": "2013" }] },

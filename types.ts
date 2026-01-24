@@ -51,6 +51,7 @@ export interface TrialResult {
   durationSeconds: number;
   interactionCount: number;
   selectedProductId: string;
+  aiRecommendedProductId: string | null;
   survey: SurveyResponse;
 }
 
