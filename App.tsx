@@ -13,6 +13,7 @@ const App: React.FC = () => {
   const [shuffledTrials, setShuffledTrials] = useState<TrialTask[]>([]);
   const [currentTrialIndex, setCurrentTrialIndex] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [lastAiRecommendationId, setLastAiRecommendationId] = useState<string | null>(null);
   
   // 计时与追踪
   const [trialStartTime, setTrialStartTime] = useState<number>(0);
@@ -38,26 +39,29 @@ const App: React.FC = () => {
     setTrialStartTime(Date.now());
   };
 
-  const handleProductSelect = (product: Product, count: number) => {
+  const handleProductSelect = (product: Product, count: number, aiRecommendedId: string | null) => {
     setTrialEndTime(Date.now());
     setInteractionCount(count);
     setSelectedProduct(product);
+    setLastAiRecommendationId(aiRecommendedId);
     setAppState(AppState.SURVEY);
   };
 
   const handleSurveyComplete = (survey: SurveyResponse) => {
     const duration = (trialEndTime - trialStartTime) / 1000;
     
+    // 构建 TrialResult 确保包含所有必需字段
     const result: TrialResult = {
-      trialId: currentTask.id, // 记录原始任务ID
+      trialId: currentTask.id,
       conditionN: currentTask.objectCount,
       conditionD: currentTask.dimensionCount,
       startTime: trialStartTime,
       endTime: trialEndTime,
       durationSeconds: duration,
       interactionCount: interactionCount,
-      selectedProductId: selectedProduct!.id,
-      survey
+      selectedProductId: selectedProduct ? selectedProduct.id : '',
+      aiRecommendedProductId: lastAiRecommendationId,
+      survey: survey
     };
 
     const newResults = [...results, result];
@@ -67,6 +71,7 @@ const App: React.FC = () => {
       setCurrentTrialIndex(prev => prev + 1);
       setAppState(AppState.CHAT);
       setSelectedProduct(null);
+      setLastAiRecommendationId(null);
       setTrialStartTime(0);
       setTrialEndTime(0);
     } else {
@@ -84,13 +89,12 @@ const App: React.FC = () => {
     };
 
     // 定义 CSV 表头
-    // 1. 将“所选商品名称”放在“用时(秒)”之前
-    // 2. 将“问卷-日常花费时间”放在最后
     const headers = [
       '被试ID', 'Run次数', '性别', '年龄', 
       '试次顺序', '原始任务ID', '商品数量(N)', '属性维度(D)', 
       '所选商品名称', '用时(秒)', '交互次数',
-      '问卷-重要性', '问卷-满意度', '问卷-高效性', '问卷-可信赖度', '问卷-擅长程度', '问卷-日常花费时间'
+      '问卷-重要性', '问卷-满意度', '问卷-高效性', '问卷-可信赖度', '问卷-擅长程度', '问卷-日常花费时间',
+      'AI建议推荐ID'
     ];
 
     // 将数据打平为行
@@ -111,7 +115,8 @@ const App: React.FC = () => {
       res.survey.efficiency,
       res.survey.trust,
       res.survey.ability,
-      res.survey.usualTime // 放在最后
+      res.survey.usualTime,
+      res.aiRecommendedProductId || '无' // 放在最后
     ]);
 
     // 构建 CSV 内容

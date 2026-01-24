@@ -99,9 +99,9 @@ export const getHotelRecommendation = async (
       // 稳态数据修正逻辑：确保返回内容严格符合前端展示需求
       // ---------------------------------------------------------
       
-      // 1. 确保 candidates 是数组且唯一
+      // 1. 确保 candidates 是数组且唯一，并修复隐式 any 错误
       if (!Array.isArray(parsed.candidates)) parsed.candidates = [];
-      parsed.candidates = [...new Set(parsed.candidates)].filter(id => products.some(p => p.id === id));
+      parsed.candidates = [...new Set(parsed.candidates as string[])].filter((id: string) => products.some(p => p.id === id));
       
       // 2. 数量修正：必须为 2 个
       if (parsed.candidates.length < 2) {
@@ -119,7 +119,7 @@ export const getHotelRecommendation = async (
       // 4. 分析开头修正 (兜底检查)
       const expectedPrefix = `我在平台上比较了 ${objectCount} 款商品`;
       if (typeof parsed.analysis !== "string" || !parsed.analysis.includes(expectedPrefix)) {
-         const topProducts = parsed.candidates.map(id => products.find(p => p.id === id)).filter(Boolean) as Product[];
+         const topProducts = (parsed.candidates as string[]).map((id: string) => products.find(p => p.id === id)).filter(Boolean) as Product[];
          const nameA = topProducts[0]?.name || "选项A";
          const nameB = topProducts[1]?.name || "选项B";
          
