@@ -39,13 +39,14 @@ const App: React.FC = () => {
     setTrialStartTime(Date.now());
   };
 
-  const handleProductSelect = (product: Product, count: number, aiRecommendedId: string | null) => {
-    setTrialEndTime(Date.now());
-    setInteractionCount(count);
-    setSelectedProduct(product);
-    setLastAiRecommendationId(aiRecommendedId);
-    setAppState(AppState.SURVEY);
-  };
+const handleProductSelect = (product: Product, count: number) => {
+  setTrialEndTime(Date.now());
+  setInteractionCount(count);
+  setSelectedProduct(product);
+  // ❌ 不再从参数拿 aiRecommendedId
+  setAppState(AppState.SURVEY);
+};
+
 
   const handleSurveyComplete = (survey: SurveyResponse) => {
     const duration = (trialEndTime - trialStartTime) / 1000;
