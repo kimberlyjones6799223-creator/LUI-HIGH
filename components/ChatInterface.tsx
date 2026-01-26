@@ -9,7 +9,7 @@ interface ChatInterfaceProps {
   trialNumber: number;
   totalTrials: number;
   onFirstMessage: () => void;
-  onFinalSelection: (product: Product, interactionCount: number) => void;
+  onFinalSelection: (product: Product, interactionCount: number, aiRecommendedId: string | null) => void;
 }
 
 const ChatInterface: React.FC<ChatInterfaceProps> = ({ 
@@ -114,7 +114,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
         </div>
       </div>
 
-      <div className="bg-blue-50 px-6 py-3 border-b border-blue-100">
+      <div className="bg-blue-50 px-6 py-3 border-b border-blue-100 shrink-0">
         <p className="text-[11px] font-bold text-blue-400 uppercase tracking-widest mb-1">当前任务目标</p>
         <p className="text-sm text-blue-900 font-medium">{task.instruction}</p>
       </div>
@@ -152,7 +152,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
                         key={product.id} 
                         product={product} 
                         isRecommended={product.id === msg.recommendationId}
-                        onSelect={() => onFinalSelection(product, interactionCount)}
+                        onSelect={() => onFinalSelection(product, interactionCount, msg.recommendationId || null)}
                       />
                     ))}
                   </div>
