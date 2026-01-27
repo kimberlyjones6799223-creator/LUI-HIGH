@@ -135,7 +135,7 @@ const SurveyInterface: React.FC<SurveyInterfaceProps> = ({ product, onComplete }
 
         {/* 4. 高效性 (已按要求修改文本) */}
         <LikertScaleItem 
-          label="4. 你觉得本次使用模态有多高效？"
+          label="4. 你觉得本次使用交互形式有多高效？"
           value={efficiency}
           minLabel="非常低效"
           maxLabel="非常高效"
