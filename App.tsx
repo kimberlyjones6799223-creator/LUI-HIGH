@@ -13,7 +13,8 @@ const App: React.FC = () => {
   const [shuffledTrials, setShuffledTrials] = useState<TrialTask[]>([]);
   const [currentTrialIndex, setCurrentTrialIndex] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [lastAiRecommendationId, setLastAiRecommendationId] = useState<string | null>(null);
+  const [lastAiRecommendationName, setLastAiRecommendationName] = useState<string | null>(null);
+  const [currentUserInputs, setCurrentUserInputs] = useState<string>('');
   
   // 计时与追踪
   const [trialStartTime, setTrialStartTime] = useState<number>(0);
@@ -39,14 +40,14 @@ const App: React.FC = () => {
     setTrialStartTime(Date.now());
   };
 
-const handleProductSelect = (product: Product, count: number) => {
-  setTrialEndTime(Date.now());
-  setInteractionCount(count);
-  setSelectedProduct(product);
-  // ❌ 不再从参数拿 aiRecommendedId
-  setAppState(AppState.SURVEY);
-};
-
+  const handleProductSelect = (product: Product, count: number, aiRecommendedName: string | null, userInputs: string) => {
+    setTrialEndTime(Date.now());
+    setInteractionCount(count);
+    setSelectedProduct(product);
+    setLastAiRecommendationName(aiRecommendedName);
+    setCurrentUserInputs(userInputs);
+    setAppState(AppState.SURVEY);
+  };
 
   const handleSurveyComplete = (survey: SurveyResponse) => {
     const duration = (trialEndTime - trialStartTime) / 1000;
@@ -61,7 +62,8 @@ const handleProductSelect = (product: Product, count: number) => {
       durationSeconds: duration,
       interactionCount: interactionCount,
       selectedProductId: selectedProduct ? selectedProduct.id : '',
-      aiRecommendedProductId: lastAiRecommendationId,
+      aiRecommendedProductName: lastAiRecommendationName,
+      userInputs: currentUserInputs,
       survey: survey
     };
 
@@ -72,7 +74,8 @@ const handleProductSelect = (product: Product, count: number) => {
       setCurrentTrialIndex(prev => prev + 1);
       setAppState(AppState.CHAT);
       setSelectedProduct(null);
-      setLastAiRecommendationId(null);
+      setLastAiRecommendationName(null);
+      setCurrentUserInputs('');
       setTrialStartTime(0);
       setTrialEndTime(0);
     } else {
@@ -89,13 +92,13 @@ const handleProductSelect = (product: Product, count: number) => {
       return product ? product.name : productId;
     };
 
-    // 定义 CSV 表头
+    // 定义 CSV 表头，最后两项按要求变更
     const headers = [
       '被试ID', 'Run次数', '性别', '年龄', 
       '试次顺序', '原始任务ID', '商品数量(N)', '属性维度(D)', 
       '所选商品名称', '用时(秒)', '交互次数',
       '问卷-重要性', '问卷-满意度', '问卷-高效性', '问卷-可信赖度', '问卷-擅长程度', '问卷-日常花费时间',
-      'AI建议推荐ID'
+      'AI建议推荐名称', '用户输入内容'
     ];
 
     // 将数据打平为行
@@ -117,7 +120,8 @@ const handleProductSelect = (product: Product, count: number) => {
       res.survey.trust,
       res.survey.ability,
       res.survey.usualTime,
-      res.aiRecommendedProductId || '无' // 放在最后
+      res.aiRecommendedProductName || '无', // AI建议推荐名称
+      `"${res.userInputs.replace(/"/g, '""')}"` // 用户输入内容，CSV 格式转义
     ]);
 
     // 构建 CSV 内容

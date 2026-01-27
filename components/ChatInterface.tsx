@@ -9,7 +9,7 @@ interface ChatInterfaceProps {
   trialNumber: number;
   totalTrials: number;
   onFirstMessage: () => void;
-  onFinalSelection: (product: Product, interactionCount: number, aiRecommendedId: string | null) => void;
+  onFinalSelection: (product: Product, interactionCount: number, aiRecommendedName: string | null, userInputs: string) => void;
 }
 
 const ChatInterface: React.FC<ChatInterfaceProps> = ({ 
@@ -21,6 +21,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
 }) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
+  const [userInputHistory, setUserInputHistory] = useState<string[]>([]);
   const [isTyping, setIsTyping] = useState(false);
   const [interactionCount, setInteractionCount] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -32,25 +33,27 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
   }, [messages, isTyping]);
 
   const handleSend = async () => {
-    if (!inputValue.trim() || isTyping) return;
+    const trimmedInput = inputValue.trim();
+    if (!trimmedInput || isTyping) return;
 
     if (interactionCount === 0) {
       onFirstMessage();
     }
 
     setInteractionCount(prev => prev + 1);
+    setUserInputHistory(prev => [...prev, trimmedInput]);
 
     const userMessage: Message = {
       id: Date.now().toString(),
       role: 'user',
-      content: inputValue
+      content: trimmedInput
     };
 
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
     setIsTyping(true);
 
-    const recommendation = await getHotelRecommendation(inputValue, task.products, task.instruction, task.objectCount);
+    const recommendation = await getHotelRecommendation(trimmedInput, task.products, task.instruction, task.objectCount);
     
     if (recommendation) {
       // ---------------------------------------------------------
@@ -141,7 +144,6 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
                   <div className="flex items-center gap-2">
                     <div className="h-px bg-gray-200 flex-grow"></div>
                     <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                      {/* 动态显示数量，理论上这里总是 2 */}
                       备选方案 (Top {msg.suggestedProducts.length})
                     </span>
                     <div className="h-px bg-gray-200 flex-grow"></div>
@@ -152,7 +154,10 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
                         key={product.id} 
                         product={product} 
                         isRecommended={product.id === msg.recommendationId}
-                        onSelect={() => onFinalSelection(product, interactionCount, msg.recommendationId || null)}
+                        onSelect={() => {
+                          const recommendedName = task.products.find(p => p.id === msg.recommendationId)?.name || null;
+                          onFinalSelection(product, interactionCount, recommendedName, userInputHistory.join('; '));
+                        }}
                       />
                     ))}
                   </div>

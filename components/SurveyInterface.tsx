@@ -126,7 +126,7 @@ const SurveyInterface: React.FC<SurveyInterfaceProps> = ({ product, onComplete }
 
         {/* 3. 满意度 (已按要求修改文本) */}
         <LikertScaleItem 
-          label="3. 你对执行任务所使用模态的满意度如何？"
+          label="3. 你对执行任务所使用交互形式的满意度如何？"
           value={satisfaction}
           minLabel="非常不满意"
           maxLabel="非常满意"
